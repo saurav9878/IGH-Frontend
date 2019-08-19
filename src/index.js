@@ -1,12 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, {Component} from "react";
+import ReactDOM from "react-dom";
+import UserLogin from "./UserLogin";
+import Dashboard from "./Dashboard";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function PageRenderer(state)
+{
+  if(!state.isLoggedIn)
+    return <UserLogin />
+  else
+    return <Dashboard />
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class App extends Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      isLoggedIn: 1
+    };
+  }
+  
+  render()
+  {
+    return (
+      <div className="App">
+        <h1>Instagram Growth Hacker</h1>
+        {PageRenderer(this.state)}
+      </div>
+    )
+  }
+}
+ReactDOM.render(<App />, document.getElementById("root"));
