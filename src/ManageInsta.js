@@ -1,5 +1,5 @@
 import React from "react";
-import Edit_Insta_Profile from "./EditInstaProfile"
+// import Edit_Insta_Profile from "./EditInstaProfile"
 function TableHeader() {
   return (
     <thead>

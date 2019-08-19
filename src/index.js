@@ -17,7 +17,7 @@ class App extends Component
   {
     super(props);
     this.state={
-      isLoggedIn: 1
+      isLoggedIn: 0
     };
   }
   
